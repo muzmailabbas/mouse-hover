@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  margin: 0;
+  background-color: #000003;
+}
+
+.movement-pad {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100%;
+  height: calc(100vh - 2em);
+  place-content: center;
+}
+
+[id|="cell"] {
+  grid-row: 1 / 1;
+}
+
+#cell-1 {
+  grid-column: 1;
+}
+
+#spaceship {
+  grid-column: 1;
+  grid-row: 1;
+  place-self: center;
+  pointer-events: none;
+  z-index: 1;
+  width: 100%;
+
+  transition: transform 200ms ease-out;
+}
+
+.movement-pad:has(#cell-2:hover) #spaceship {
+  transform: translateX(100%);
+}
+
+.movement-pad:has(#cell-3:hover) #spaceship {
+  transform: translateX(200%);
+}
+
+.movement-pad:has(#cell-4:hover) #spaceship {
+  transform: translateX(300%);
+}
+
+.movement-pad:has(#cell-5:hover) #spaceship {
+  transform: translateX(400%);
+}
+
+.movement-pad:has(#cell-6:hover) #spaceship {
+  transform: translateX(500%);
+}
+
+.movement-pad:has(#cell-7:hover) #spaceship {
+  transform: translateX(600%);
+}
+
+.movement-pad:has(#cell-8:hover) #spaceship {
+  transform: translateX(700%);
+}
+
+.movement-pad:has(#cell-9:hover) #spaceship {
+  transform: translateX(800%);
+}
+
+.movement-pad:has(#cell-10:hover) #spaceship {
+  transform: translateX(900%);
+}
+
+.movement-pad:has(#cell-11:hover) #spaceship {
+  transform: translateX(1000%);
+}
+
+.movement-pad:has(#cell-12:hover) #spaceship {
+  transform: translateX(1100%);
+}
+</style>
+<body>
+    <div class="movement-pad">
+        <svg id="spaceship" xmlns="http://www.w3.org/2000/svg" width="72" height="104" viewBox="0 0 72 104" fill="none">
+          <path d="M6.10379 52.372C4.28311 53.1559 2.55387 51.0983 3.63948 49.4397L35.1633 1.27829C35.5581 0.675173 36.4419 0.675176 36.8367 1.2783L68.3605 49.4397C69.4461 51.0983 67.7169 53.1559 65.8962 52.372L46.4516 44L36 46.5L25.5484 44L6.10379 52.372Z" fill="#282828" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5798 49.536C4.05208 50.3397 5.06299 50.8201 6.10377 50.372L25.5484 42L36 44.5L46.4516 42L65.8962 50.372C66.937 50.8201 67.9479 50.3397 68.4202 49.536C69.3794 51.1765 67.6818 53.1408 65.8962 52.372L46.4516 44L36 46.5L25.5484 44L6.10377 52.372C4.31818 53.1408 2.62054 51.1765 3.5798 49.536Z" fill="#5CCEFF" />
+          <ellipse cx="36" cy="22" rx="5" ry="8" fill="#111111" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M38.9055 23.25C38.5725 24.5439 37.3979 25.5 36 25.5C34.6021 25.5 33.4275 24.5439 33.0945 23.25C33.0328 23.4897 33 23.741 33 24C33 25.6569 34.3431 27 36 27C37.6569 27 39 25.6569 39 24C39 23.741 38.9672 23.4897 38.9055 23.25Z" fill="#5CCEFF" />
+          <path d="M45 70C45 84.3594 36 104 36 104C36 104 27 84.3594 27 70C27 55.6406 31.0294 52 36 52C40.9706 52 45 55.6406 45 70Z" fill="#5CCEFF" />
+          <path d="M44 70C44 73.6705 41.9121 77.5773 39.6885 80.6657C38.5918 82.1888 37.4933 83.4707 36.6686 84.3717C36.4171 84.6465 36.1916 84.8853 36 85.0841C35.8084 84.8853 35.5829 84.6465 35.3314 84.3717C34.5067 83.4707 33.4082 82.1888 32.3115 80.6657C30.0879 77.5773 28 73.6705 28 70C28 62.8749 29.0068 58.599 30.4927 56.131C31.224 54.9165 32.0652 54.1496 32.9619 53.6785C33.8637 53.2047 34.8796 53 36 53C37.1204 53 38.1363 53.2047 39.0381 53.6785C39.9348 54.1496 40.776 54.9165 41.5073 56.131C42.9932 58.599 44 62.8749 44 70Z" fill="white" stroke="#5CCEFF" stroke-width="2" />
+          <path d="M42 50L38 46L43 41L49 43L42 50Z" fill="#5CCEFF" />
+          <path d="M30 50L34 46L29 41L23 43L30 50Z" fill="#5CCEFF" />
+          <path d="M44 15L51 25V32L44 30V15Z" fill="#111111" />
+          <path d="M28 15L21 25V32L28 30V15Z" fill="#111111" />
+          <path d="M21 32L28 30" stroke="#5CCEFF" stroke-linecap="round" />
+          <path d="M51 32L44 30" stroke="#5CCEFF" stroke-linecap="round" />
+        </svg>
+        <div id="cell-1">1</div>
+        <div id="cell-2">2</div>
+        <div id="cell-3">3</div>
+        <div id="cell-4">4</div>
+        <div id="cell-5">5</div>
+        <div id="cell-6">6</div>
+        <div id="cell-7">7</div>
+        <div id="cell-8">8</div>
+        <div id="cell-9">9</div>
+        <div id="cell-10">10</div>
+        <div id="cell-11">11</div>
+        <div id="cell-12">12</div>
+      </div>
+</body>
+</html>
